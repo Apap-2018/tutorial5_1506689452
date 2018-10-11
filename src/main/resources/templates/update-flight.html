@@ -9,7 +9,7 @@
 
 <body>
 	<nav th:replace="fragments/fragment :: navbar(title='Update Flight')"></nav>
-    <h1>Hello!</h1>
+  	<div style="padding: 16px">
     <h3>Flight Number: [[${flight.flightNumber}]]</h3>
     <form th:action="@{/flight/update/{id}(id=${flight.id})}" th:object="${flight}" method="POST">
     	<input type="hidden" th:value="${flight.flightNumber}" name="flightNumber" />	
@@ -24,5 +24,6 @@
         <br><br>
         <input type="submit" value="Update">
     </form>
+    </div>
 </body>
 </html>

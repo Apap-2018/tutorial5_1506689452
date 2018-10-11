@@ -49,6 +49,7 @@
 					<th>Destination</th>
 					<th>Time</th>
 					<th>Action</th>
+					<th>Update</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -62,6 +63,7 @@
 						<input type="checkbox" th:field="*{pilotFlight}" th:value="${flight.id}" />
 						<label th:for="${#ids.prev('pilotFlight')}">Hapus</label>
 					</td>
+					<td><a th:href="@{/flight/update/{id}(id=${flight.id})}">Update</a></td>
 				</tr>
 			</tbody> 
 		</table>

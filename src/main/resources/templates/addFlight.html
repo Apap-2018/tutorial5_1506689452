@@ -21,25 +21,25 @@
 					<th>Origin</th>
 					<th>Destination</th>
 					<th>Time</th>
-					<th><button type="submit" name="addRow">Add Flight</button></th>	
+					<th><button type="submit" name="addRow" formnovalidate>Add Flight</button></th>	
 				</tr>
 			</thead>
 			<tbody>
 				<tr th:each="flight, iterationStatus: *{pilotFlight}">
 					<td>
-						<input type="text" name="flightNumber" th:field="*{pilotFlight[__${iterationStatus.index}__].flightNumber}" />
+						<input required="required" type="text" name="flightNumber" th:field="*{pilotFlight[__${iterationStatus.index}__].flightNumber}" />
 					</td>
 					<td>
-						<input type="text" name="origin" th:field="*{pilotFlight[__${iterationStatus.index}__].origin}" />
+						<input required="required" type="text" name="origin" th:field="*{pilotFlight[__${iterationStatus.index}__].origin}" />
 					</td>
 					<td>
-						<input type="text" name="destination" th:field="*{pilotFlight[__${iterationStatus.index}__].destination}" />
+						<input required="required" type="text" name="destination" th:field="*{pilotFlight[__${iterationStatus.index}__].destination}" />
 					</td>
 					<td>
-						<input type="date" name="time" th:field="*{pilotFlight[__${iterationStatus.index}__].time}" >
+						<input required="required" type="date" name="time" th:field="*{pilotFlight[__${iterationStatus.index}__].time}" >
 					</td>
-					<td>
-					<button type="submit" name="removeRow" th:value="${iterationStatus.index}">Remove</button>
+					<td th:unless="${iterationStatus.size} <= 1">
+					<button type="submit" name="removeRow" th:value="${iterationStatus.index}" formnovalidate>Remove</button>
 					</td>
 				</tr>
 			</tbody>

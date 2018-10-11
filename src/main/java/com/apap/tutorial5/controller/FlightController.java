@@ -113,9 +113,9 @@ public class FlightController {
     	return "deleted";
     }
     
-//    @RequestMapping(value= "/flight/delete/{id}")
-//    private String delete(@PathVariable Long id) {
-//    	flightService.removeFlight(id);
-//    	return "deleted";
-//    }
+    @RequestMapping(value= "/flight/delete/{id}")
+    private String delete(@PathVariable Long id) {
+    	flightService.removeFlight(id);
+    	return "deleted";
+    }
 }
