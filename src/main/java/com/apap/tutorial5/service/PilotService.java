@@ -10,3 +10,4 @@ public interface PilotService {
 	void removePilot(long pilot);
 	void updatePilot(PilotModel pilotModel);
 }
+

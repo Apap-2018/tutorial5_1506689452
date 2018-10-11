@@ -13,7 +13,40 @@
 	<h2>Hello!</h2>
 	
 	<h3>Tambah Penerbangan</h3>
-	<form th:action="@{/flight/add}" th:object="${flight}" method="POST">
+	<form th:action="@{/flight/add/} + ${pilot.licenseNumber}" th:object="${pilot}" method="POST">
+			<table border="0">
+			<thead>
+				<tr style="text-align: center">
+					<th>Flight Number</th>
+					<th>Origin</th>
+					<th>Destination</th>
+					<th>Time</th>
+					<th><button type="submit" name="addRow">Add Flight</button></th>	
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="flight, iterationStatus: *{pilotFlight}">
+					<td>
+						<input type="text" name="flightNumber" th:field="*{pilotFlight[__${iterationStatus.index}__].flightNumber}" />
+					</td>
+					<td>
+						<input type="text" name="origin" th:field="*{pilotFlight[__${iterationStatus.index}__].origin}" />
+					</td>
+					<td>
+						<input type="text" name="destination" th:field="*{pilotFlight[__${iterationStatus.index}__].destination}" />
+					</td>
+					<td>
+						<input type="date" name="time" th:field="*{pilotFlight[__${iterationStatus.index}__].time}" >
+					</td>
+					<td>
+					<button type="submit" name="removeRow" th:value="${iterationStatus.index}">Remove</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<button type="submit" name="submit">Submit</button>
+		
+		<!-- 
 		<input type="hidden" th:field="*{pilotFlight}"/>
 		Flight Number: <br>
 		<input type="text" name="flightNumber" />
@@ -28,6 +61,7 @@
 		<input type="date" name="time" />
 		<br><br>
 		<button type="submit">Submit</button>
+		 -->
 	</form>
 </body>
 

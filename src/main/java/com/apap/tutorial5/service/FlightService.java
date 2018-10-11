@@ -11,4 +11,5 @@ public interface FlightService {
 	void removeFlight(Long id);
 	FlightModel flightById(Long id);
 	List<FlightModel> getAllFlight();
+//	List<FlightModel> getFlightDetailByPilot(String licenseNumber);
 }

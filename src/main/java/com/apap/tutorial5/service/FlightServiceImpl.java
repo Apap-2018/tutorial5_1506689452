@@ -44,4 +44,9 @@ public class FlightServiceImpl implements FlightService{
 	public void removeFlight(Long id) {
 		flightDb.deleteById(id);
 	}
+	
+//	@Override
+//	public List<FlightModel> getFlightDetailByPilot(String licenseNumber) {
+//		return flightDb.findByPilotLicenseNumber(licenseNumber);
+//	}
 }

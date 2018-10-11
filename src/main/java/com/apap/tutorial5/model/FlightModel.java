@@ -42,7 +42,7 @@ public class FlightModel implements Serializable{
 	@JoinColumn(name = "pilot_licenseNumber", referencedColumnName = "license_number", nullable = false)
 	@OnDelete(action = OnDeleteAction.NO_ACTION)
 	@JsonIgnore
-	private PilotModel pilotFlight;
+	private PilotModel pilot;
 
 	public long getId() {
 		return id;
@@ -84,11 +84,11 @@ public class FlightModel implements Serializable{
 		this.time = time;
 	}
 
-	public PilotModel getPilotFlight() {
-		return pilotFlight;
+	public PilotModel getPilot() {
+		return pilot;
 	}
 
-	public void setPilotFlight(PilotModel pilotFlight) {
-		this.pilotFlight = pilotFlight;
+	public void setPilot(PilotModel pilot) {
+		this.pilot = pilot;
 	}
 }
