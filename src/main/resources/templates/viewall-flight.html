@@ -24,8 +24,8 @@
     <td th:text="${flight.origin}" />
     <td th:text="${flight.destination}" />
     <td th:text="${flight.time}" />
-    <td th:text="${flight.getPilotFlight().getName()}" />
-    <td th:text="${flight.getPilotFlight().getLicenseNumber()}" />
+    <td th:text="${flight.getPilot().getName()}" />
+    <td th:text="${flight.getPilot().getLicenseNumber()}" />
     <td><a th:href="@{/flight/delete/{id}(id=${flight.id})}">Delete</a></td>
 	<td><a th:href="@{/flight/update/{id}(id=${flight.id})}">Update</a></td>
 </tr>

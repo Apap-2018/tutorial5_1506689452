@@ -13,8 +13,8 @@
 	<nav th:replace="fragments/fragment :: navbar(title='Home')"></nav>
 
 <div class="container-fluid">
-<h2>Hello!</h2>
-<div class"row">
+<br>
+<div class="row">
 	<div class="col-md-6">
 		<div class="card">
 			<div class="card-header">
@@ -28,7 +28,20 @@
 	</div>
 </div>
 <br>
-	<div class"row">
+<div class="row">
+	<div class="col-md-6">
+		<div class="card">
+			<div class="card-header">
+				Lihat Daftar Penerbangan
+			</div>
+			<div class="card-body">
+				<a class="btn btn-primary" th:href="@{/flight/viewall}">Lihat</a>
+			</div>
+		</div>
+	</div>
+</div>
+<br>
+	<div class="row">
 		<div class="col-md-6">
 			<div class="card">
 				<div class="card-header">

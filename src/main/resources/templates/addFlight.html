@@ -10,7 +10,7 @@
 
 <body>
 	<nav th:replace="fragments/fragment :: navbar(title='Add Flight')"></nav>
-	<h2>Hello!</h2>
+<div style="padding: 16px">
 	
 	<h3>Tambah Penerbangan</h3>
 	<form th:action="@{/flight/add/} + ${pilot.licenseNumber}" th:object="${pilot}" method="POST">
@@ -45,24 +45,8 @@
 			</tbody>
 		</table>
 		<button type="submit" name="submit">Submit</button>
-		
-		<!-- 
-		<input type="hidden" th:field="*{pilotFlight}"/>
-		Flight Number: <br>
-		<input type="text" name="flightNumber" />
-		<br>
-		Origin: <br>
-		<input type="text" name="origin" />
-		<br>
-		Destination: <br>
-		<input type="text" name="destination" />
-		<br>
-		Time: <br>
-		<input type="date" name="time" />
-		<br><br>
-		<button type="submit">Submit</button>
-		 -->
 	</form>
+</div>
 </body>
 
 </html>
