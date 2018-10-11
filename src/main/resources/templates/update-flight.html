@@ -8,7 +8,7 @@
 </head>
 
 <body>
-	<nav th:replace="fragments/fragment :: navbar"></nav>
+	<nav th:replace="fragments/fragment :: navbar(title='Update Flight')"></nav>
     <h1>Hello!</h1>
     <h3>Flight Number: [[${flight.flightNumber}]]</h3>
     <form th:action="@{/flight/update/{id}(id=${flight.id})}" th:object="${flight}" method="POST">

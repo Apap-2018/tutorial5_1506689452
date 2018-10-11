@@ -9,7 +9,7 @@
 </head>
 
 <body>
-	<nav th:replace="fragments/fragment :: navbar"></nav>
+	<nav th:replace="fragments/fragment :: navbar(title='View Pilot')"></nav>
 	<h3>Pilot License Number: [[${pilot.licenseNumber}]]</h3>
 	<h3>Name: [[${pilot.name}]]</h3>
 	<h3>Fly Hour: [[${pilot.flyHour}]]</h3>
